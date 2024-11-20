@@ -1,0 +1,10 @@
+---
+BasedOnStyle: Google
+IndentWidth: 4
+---
+Language: Cpp
+ColumnLimit: 100
+DerivePointerAlignment: false
+PointerAlignment: Left
+BinPackArguments: false
+BinPackParameters: false

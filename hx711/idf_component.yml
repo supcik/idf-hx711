@@ -1,0 +1,9 @@
+version: 1.0.0
+description: hx711 component for ESP-IDF
+maintainers:
+  - Jacques Supcik <jacques@supcik.net>
+url: https://github.com/supcik/idf-hx711/tree/main/rc522
+repository: https://github.com/supcik/idf-hx711.git
+license: MIT
+dependencies:
+  idf: ">=5.3"

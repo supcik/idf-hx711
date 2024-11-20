@@ -1,0 +1,3 @@
+dependencies:
+  hx711:
+    override_path: "../../../"

@@ -1,0 +1,10 @@
+build
+dist
+managed_components
+sdkconfig
+sdkconfig.old
+dependencies.lock
+/doc/html
+/doc/latex
+/.vscode/settings.json
+/.venv/
