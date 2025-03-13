@@ -22,7 +22,7 @@ jobs:
     needs: pre-commit
     strategy:
       matrix:
-        target: [esp32s3]
+        target: [esp32s3, esp32c6]
         esp_idf_version: [v5.3.1]
         path: ['hx711/examples/get_started']
 

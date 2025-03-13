@@ -28,6 +28,13 @@
 
 static const char* kTag = "HX711";
 
+// Not all clock sources are available on all chips.
+#ifdef CONFIG_IDF_TARGET_ESP32C6
+#define GPTIMER_CLK_SOURCE GPTIMER_CLK_SRC_DEFAULT
+#else  // Fallback.
+#define GPTIMER_CLK_SOURCE GPTIMER_CLK_SRC_APB
+#endif
+
 HX711::HX711(gpio_num_t clock_pin, gpio_num_t data_pin, Mode mode)
     : clock_pin_(clock_pin), data_pin_(data_pin) {
     if (mode == Mode::kChannelA128) {
@@ -67,7 +74,7 @@ HX711::HX711(gpio_num_t clock_pin, gpio_num_t data_pin, Mode mode)
     ESP_ERROR_CHECK(dedic_gpio_new_bundle(&data_config, &data_));
 
     gptimer_config_t timer_conf = {};
-    timer_conf.clk_src = GPTIMER_CLK_SRC_APB;
+    timer_conf.clk_src = GPTIMER_CLK_SOURCE;
     timer_conf.direction = GPTIMER_COUNT_UP;
     timer_conf.resolution_hz = 10000000;  // 10MhZ
     ESP_ERROR_CHECK(gptimer_new_timer(&timer_conf, &gptimer_));
