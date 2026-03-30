@@ -9,8 +9,12 @@ repos:
     hooks:
       - id: check-yaml
         args: [--allow-multiple-documents]
+      - id: check-yaml
+        args: [--allow-multiple-documents]
       - id: end-of-file-fixer
+        exclude: ^.*/API\.md$
       - id: trailing-whitespace
+        exclude: ^.*/API\.md$
 
   - repo: https://github.com/pre-commit/mirrors-clang-format
     rev: v22.1.2
