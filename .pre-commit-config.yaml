@@ -11,10 +11,20 @@ repos:
         args: [--allow-multiple-documents]
       - id: end-of-file-fixer
       - id: trailing-whitespace
+
   - repo: https://github.com/pre-commit/mirrors-clang-format
     rev: v22.1.2
     hooks:
       - id: clang-format
+
+  - repo: https://github.com/espressif/doxybook
+    rev: v0.3.0
+    hooks:
+      - id: doxygen-api-md
+        types: [file, c++]
+        args:
+          ["-i", "doxygen/xml", "-o", "hx711/API.md", "--template-lang", "cpp"]
+
   - repo: https://codeberg.org/fsfe/reuse-tool
     rev: v6.2.0
     hooks:

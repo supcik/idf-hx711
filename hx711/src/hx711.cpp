@@ -1,16 +1,10 @@
-/**
- ******************************************************************************
- * @file        : hx711.cpp
- * @brief       : HX711 controller
- * @author      : Jacques Supcik <jacques@supcik.net>
- * @date        : 20 November 2024
- ******************************************************************************
- * @copyright   : Copyright (c) 2024 Jacques Supcik
- * @attention   : SPDX-License-Identifier: MIT
- ******************************************************************************
- * @details     : HX711 controller
- ******************************************************************************
- */
+// SPDX-FileCopyrightText: 2026 Jacques Supcik <jacques@supcik.net>
+//
+// SPDX-License-Identifier: MIT
+
+//
+// HX711 controller
+//
 
 #include "hx711.hpp"
 

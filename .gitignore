@@ -8,3 +8,4 @@ dependencies.lock
 /doc/latex
 /.vscode/settings.json
 /.venv/
+/doxygen
