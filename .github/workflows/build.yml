@@ -11,8 +11,8 @@ jobs:
   pre-commit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - uses: pre-commit/action@v3.0.1
@@ -27,8 +27,8 @@ jobs:
         path: ["hx711/examples/get_started"]
 
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: esp-idf build
@@ -44,12 +44,11 @@ jobs:
     needs: build
     if: startsWith(github.event.ref, 'refs/tags/v')
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Upload component to the component registry
-        uses: espressif/upload-components-ci-action@v1
+        uses: espressif/upload-components-ci-action@v2
         with:
-          name: ${{ env.COMPONENT }}
+          components: "${{ env.COMPONENT }}"
           version: ${{ github.ref_name }}
           namespace: "supcik"
           api_token: ${{ secrets.IDF_COMPONENT_API_TOKEN }}
-          directories: ${{ env.COMPONENT }}
